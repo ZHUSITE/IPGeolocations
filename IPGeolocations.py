@@ -2,11 +2,11 @@
 # encoding: UTF-8
 
 """
-    This file is part of IPGeoLocation tool.
-    Copyright (C) 2015-2016 @maldevel
-    https://github.com/maldevel/IPGeoLocation
+    This file is part of IPGeoLocations tool.
+    Copyright (C) 2015-2016 @susiteyt
+    https://github.com/susiteyt/IPGeoLocations
     
-    IPGeoLocation - Retrieve IP Geolocation information 
+    IPGeoLocations - Retrieve IP Geolocation information 
     Powered by http://ip-api.com
     
     This program is free software: you can redistribute it and/or modify
@@ -23,11 +23,11 @@
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__  = 'maldevel'
+__author__  = 'susiteyt'
 
 
 import sys, os
-from core.IpGeoLocationLib import IpGeoLocationLib
+from core.IpGeoLocationsLib import IpGeoLocationsLib
 from core.Logger import Logger
 from core.Menu import parser,args,banner
     
@@ -79,7 +79,7 @@ def main():
         
         
     #init lib
-    ipGeoLocRequest = IpGeoLocationLib(args.target, logger, args.noprint)
+    ipGeoLocRequest = IpGeoLocationsLib(args.target, logger, args.noprint)
     
     print(banner)
     
@@ -87,7 +87,7 @@ def main():
     if not ipGeoLocRequest.GetInfo(args.uagent, args.tlist, 
                                      args.ulist, args.proxy, args.xlist,
                                      args.csv, args.xml, args.txt, args.g):
-        logger.PrintError("Retrieving IP Geolocation information failed.")
+        logger.PrintError("Retrieving IP Geolocations information failed.")
         sys.exit(8)
 
 
